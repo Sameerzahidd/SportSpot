@@ -1,0 +1,63 @@
+# Python related
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Environment variables file
+.env
+
+# Flask related
+instance/
+*.db
+*.sqlite3
+app/__pycache__/
+app/static/__pycache__/
+app/templates/__pycache__/
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Pytest and other testing related
+.coverage
+.tox/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Logs and debugging
+*.log
+*.pot
+*.mo
+*.pid
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+
+# Deployment related
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.pot
+*.mo
