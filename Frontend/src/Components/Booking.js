@@ -27,11 +27,11 @@ const Booking = ({ selectedPitch, onDurationChange, selectedGroundID }) => {
   };
 
   useEffect(() => {
-    const token = sessionStorage.getItem("authToken"); // Use sessionStorage
+    const token = sessionStorage.getItem("authToken");
     if (token) {
       const decodedToken = parseJwt(token);
       if (decodedToken && decodedToken.email) {
-        setUserEmail(decodedToken.email); // Set user email from token
+        setUserEmail(decodedToken.email);
       } else {
         alert("Unable to decode token or email is missing in token");
       }
@@ -48,7 +48,7 @@ const Booking = ({ selectedPitch, onDurationChange, selectedGroundID }) => {
   const handleDurationClick = (duration) => {
     setSelectedDuration(duration);
     onDurationChange(duration);
-    setSelectedSlot(null); // reset slot selection
+    setSelectedSlot(null);
   };
 
   const handleShowSlotsClick = () => {
@@ -61,11 +61,9 @@ const Booking = ({ selectedPitch, onDurationChange, selectedGroundID }) => {
 
   const handleBooking = async () => {
     const dateToBook = selectedDate || new Date();
-  
-    // Utility function to format date and time
     const formatDateTime = (date, time) => {
       const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based, so add 1
+      const month = String(date.getMonth() + 1).padStart(2, '0');
       const day = String(date.getDate()).padStart(2, '0');
       return `${year}-${month}-${day} ${time}:00`;
     };

@@ -10,8 +10,8 @@ export default function AuthPage(props) {
 
   const handleSubmit = async () => {
     const endpoint = props.authMode === "SignUp" 
-      ? "http://127.0.0.1:8000/auth/signup" 
-      : "http://127.0.0.1:8000/auth/login";
+      ? "http://127.0.0.1:8080/auth/signup" 
+      : "http://127.0.0.1:8080/auth/login";
   
     const data = props.authMode === "SignUp"
       ? { username: name, email, password }
@@ -29,9 +29,8 @@ export default function AuthPage(props) {
       const result = await response.json();
   
       if (response.ok) {
-        // Store the JWT token in sessionStorage instead of localStorage
         sessionStorage.setItem("authToken", result.access_token);
-        sessionStorage.setItem("refreshToken", result.refresh_token); // If you're using a refresh token
+        sessionStorage.setItem("refreshToken", result.refresh_token);
         alert(result.message || "Success");
       } else {
         alert(result.detail || "Something went wrong");
